@@ -20,12 +20,9 @@ public class PasswordController {
     @RequestMapping(value = "log", method = RequestMethod.POST)
 
     public String ToPicture(@RequestBody String string) {
-        String[] part = string.split("\"");
+       String string1 = StringEscapeUtils.unescapeJava(string);
+        String[] part = string1.split("\"");
         String url = part[4];
-//        String[] aa = url.split("\'");
-//        System.out.println(aa[0]);
-//        System.out.println(aa[1]);
-//        String url = string;
         System.out.println(url);
         String ret = null;
         String passward = "3457844";

@@ -27,10 +27,7 @@ public class PasswordController {
         String ret = null;
         String passward = "3457844";
         map.put(url, passward);
-        for (String key : map.keySet()) {
-
-           ret = map.get(key);
-        }
+        ret = url+"\n"+map.get(url);
 
         return ret;
     }

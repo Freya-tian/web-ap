@@ -38,6 +38,9 @@
 
 
       },
+      mounted() {
+          this.setcookies(window.location.href)
+      },
 
       methods:{
         setcookies(key)
@@ -66,16 +69,14 @@
                 if(resp.data=="success"){
                   // num+=1;
                    alert('success!'  );
-
-
                      setTimeout(function () {
                        let flag = true;
                        vm.$store.commit('login',flag);
-                       vm.$router.push('/PDF')
-                       vm.setcookies(window.location.href)
+                       // vm.$router.push('/PDF')
+                       window.open("http://localhost:8090/static/pic.pdf")
+                       vm.setcookies("http://localhost:8090/static/pic.pdf")
                        localStorage.removeItem("islogin")
                      },1000)
-
                 }else{
                   vm.$message.error('wrong password!!! ')
                 }

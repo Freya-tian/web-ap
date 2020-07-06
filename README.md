@@ -28,5 +28,21 @@ Vue:
     npm install vue-router
     import VueRouter from 'vue-router'
     Vue.use(VueRouter)
+    
+JAVA
+ Доступ к статическим ресурсам
+    <mvc:resoures location="",mapping>
+    <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.pdf</url-pattern>
+  </servlet-mapping>
+Побег JASON персонаж
+   <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.0</version>
+    </dependency>
+  </dependencies>
+   
  
 	

@@ -1,7 +1,7 @@
 <template>
     <div class="ToPicture" ref="imageTofile" id="pdfDom" style="padding-top: 55px;background-color:#fff;">
-
       <el-form ref="form" :model="form" label-width="80px">
+
         <el-form-item label="">
           <el-input
             type="textarea"
@@ -10,82 +10,66 @@
             placeholder="please enter information"
             v-model="form.textarea">
           </el-input>
-
         </el-form-item>
-
         <el-form-item>
-         <button type="button" class="btn btn-primary"v-on:click="getPdf(),open(),gettime()">ToPDF</button>
-
+         <button type="button" class="btn btn-primary"v-on:click="getPdf(),open()">ToPDF</button>
         </el-form-item>
+        <el-form-item>
+
+          <button type="button" class="btn btn-primary"v-on:click="lookPdf">LookPDF</button>
+          {{this.time}}
+        </el-form-item>
+
       </el-form>
 
-
-
     </div>
-
 </template>
 
 <script>
   import layer from 'vue-layer'
-
     export default {
       name: "ToPicture",
-
-
       data() {
         return {
           htmlTitle: 'pic',
-          time: '',
-
+          time: new Date(),
           html:'http://localhost:8080/PDF',
           form: {
             textarea: '',
-
-
           }
         }
       },
       mounted() {
         this.setcookies(window.location.href)
+        this.Function();
       },
 
+      beforeDestroy:function(){
+        if(this.timer){
+          clearInterval(this.timer);  //在Vue实例销毁前，清除定时器
+        }
+      },
+
+
       methods: {
+        lookPdf(){
+        this.$router.push('/Login')
+        },
         open(){
 
             this.axios({
               method: 'post',
               url: "http://localhost:8090/log",
 
-              data :{ URL : JSON.stringify(this.html)},
+              data :{ URL : JSON.stringify(this.htmlTitle+".pdf")},
 
             }).then(function (resp){
             setTimeout(function () {
-               alert("http://localhost:8080/PDF"+"\n"+resp.data)
+               alert(resp.data)
             },5000)
-
-
-
             })
-
-
-        },
-        LookPdf(time) {
-          var vm = this;
-          setTimeout(function () {
-            vm.$router.push('/Login')
-            vm.setcookies('localhost:8080/Login')
-          }, 1000)
         },
 
-
-        // LookPdf(time) {
-        //   var vm = this;
-        //   setTimeout(function () {
-        //     vm.$router.push('/Login')
-        //     vm.setcookies('localhost:8080/Login')
-        //   }, 1000)
-        //
-        // },
         setcookies(key) {
           let now = new Date()
           let data = new Date()
@@ -93,14 +77,21 @@
           document.cookie = now + key
           console.log(document.cookie)
         },
-
-        gettime() {
-          localStorage.removeItem("T")
-
-          this.time = new Date().toString()
-          // alert(this.time)
-          localStorage.setItem("T", JSON.stringify(this.time))
-        }
+        Function(){
+          var _this = this; //声明一个变量指向Vue实例this，保证作用域一致
+          this.timer = setInterval(function(){
+            //设置定时器，每秒执行一次function函数，
+            //函数是获取当前时间并给date变量赋值(每秒赋值一次)
+            _this.time = new Date();  //修改数据date
+          },1000);
+        },
+        // gettime() {
+        //   localStorage.removeItem("T")
+        //
+        //   this.time = new Date().toString()
+        //   // alert(this.time)
+        //   localStorage.setItem("T", JSON.stringify(this.time))
+        // }
       }
     }
 
@@ -185,3 +176,4 @@
 
 
 </style>
+

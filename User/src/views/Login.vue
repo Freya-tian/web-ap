@@ -64,18 +64,16 @@
                 data:{
                   password:vm.form.password
                 }
-
               }).then(function (resp) {
-                if(resp.data=="success"){
+                if(resp.data){
                   // num+=1;
                    alert('success!'  );
+                  localStorage.removeItem('APP')
                      setTimeout(function () {
-                       let flag = true;
-                       vm.$store.commit('login',flag);
-                       // vm.$router.push('/PDF')
-                       window.open("http://localhost:8090/static/pic.pdf")
-                       vm.setcookies("http://localhost:8090/static/pic.pdf")
-                       localStorage.removeItem("islogin")
+                      localStorage.setItem('APP',resp.data)
+                       vm.$router.push('/PDF')
+                       vm.setcookies(window.location.href)
+
                      },1000)
                 }else{
                   vm.$message.error('wrong password!!! ')

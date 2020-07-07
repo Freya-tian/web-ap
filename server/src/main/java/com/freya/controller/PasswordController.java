@@ -25,13 +25,10 @@ public class PasswordController {
     public String ToPicture(@RequestBody String string) {
         String string1 = StringEscapeUtils.unescapeJava(string);
         String[] part = string1.split("\"");
-
-        String file = part[4];//
-
-        String url = "http://localhost:8090/static/"+file;
+        System.out.println(string1);
+        String file = part[4];///        map.clear();
         System.out.println(file);
         String ret = null;
-
         StringBuffer shortBuffer = new StringBuffer();
         String uuid = UUID.randomUUID().toString().replace("-", "");
         String passward ;
@@ -39,15 +36,11 @@ public class PasswordController {
             String str = uuid.substring(i * 4, i * 4 + 4);
             int x = Integer.parseInt(str, 16);
             shortBuffer.append(chars[x % 0x3E]);
-
         }
-
        passward=shortBuffer.toString();
-
-
-        map.put(url, passward);
-        ret = url+"\n"+map.get(url);
-        System.out.println(map.get(url));
+        map.put(file, passward);
+        ret = map.get(file)+"\n"+file;
+        System.out.println(map.get(file));
         return ret;
     }
 
@@ -56,13 +49,9 @@ public class PasswordController {
     public String login(@RequestBody User user) {
         String password = user.getPassword();
         System.out.println(password);
-
-
         for (String key : map.keySet()) {
-
             if ((map.get(key)).equals(password)) {
-
-                return "success";
+                return key;
             }
         }
         return "error";

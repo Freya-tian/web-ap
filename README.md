@@ -53,18 +53,18 @@
 >> - Доступ к статическим ресурсам
 >>
     <mvc:resoures location="",mapping>
-     <servlet-mapping>
-    <servlet-name>default</servlet-name>
-    <url-pattern>*.pdf</url-pattern>
-   </servlet-mapping>
+    <servlet-mapping>
+       <servlet-name>default</servlet-name>
+       <url-pattern>*.pdf</url-pattern>
+    </servlet-mapping>
 >> - Побег JASON персонаж
 >>
-   - <dependency>
-      - <groupId>org.apache.commons</groupId>
-      - <artifactId>commons-lang3</artifactId>
-      - <version>3.0</version>
-    - </dependency>
-  - </dependencies>
+    <dependency>
+       <groupId>org.apache.commons</groupId>
+       <artifactId>commons-lang3</artifactId>
+       <version>3.0</version>
+     </dependency>
+  
    
  
 	

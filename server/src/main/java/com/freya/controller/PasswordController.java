@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.UUID;
-
+import java.util.*;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class PasswordController {
@@ -41,6 +41,7 @@ public class PasswordController {
         map.put(file, passward);
         ret = map.get(file)+"\n"+file;
         System.out.println(map.get(file));
+
         return ret;
     }
 
@@ -49,11 +50,23 @@ public class PasswordController {
     public String login(@RequestBody User user) {
         String password = user.getPassword();
         System.out.println(password);
+        Timer timer = new Timer();// 实例化Timer类
+        timer.schedule(new TimerTask() {
+            public void run() {
+                map.clear();
+            }
+        }, 10000);// 这里百毫秒
         for (String key : map.keySet()) {
             if ((map.get(key)).equals(password)) {
                 return key;
             }
         }
+//        Timer timer = new Timer();// 实例化Timer类
+//        timer.schedule(new TimerTask() {
+//            public void run() {
+//                map.clear();
+//            }
+//        }, 5000);// 这里百毫秒
         return "error";
     }
 

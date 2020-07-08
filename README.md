@@ -15,11 +15,12 @@
 ##***Элементы страницы для достижения необходимой конфигурации***  
 
 > Vue:
- >> Применить веб-шаблон
-    npm i element-ui -S 
-    import ElementUI from 'element-ui';
-    import 'element-ui/lib/theme-chalk/index.css';
-    Vue.use(ElementUI);
+ >> - Применить веб-шаблон
+ >>
+    - npm i element-ui -S 
+    - import ElementUI from 'element-ui';
+    - import 'element-ui/lib/theme-chalk/index.css';
+    - Vue.use(ElementUI);
     
  Оставить заявку на бэкэнд（Submit a request to the backend）
     npm install axios

@@ -76,7 +76,7 @@
 
 >***Result***
 >>
-    ![imag](https://github.com/Freya-tian/web-ap/blob/master/kmjp4-x2xdc.gif)
+    ![image](https://github.com/Freya-tian/web-ap/blob/master/kmjp4-x2xdc.gif)
   
    
  

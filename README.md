@@ -52,11 +52,11 @@
 > JAVA
 >> - Доступ к статическим ресурсам
 >>
-   - <mvc:resoures location="",mapping>
-   -  <servlet-mapping>
-   - <servlet-name>default</servlet-name>
-   - <url-pattern>*.pdf</url-pattern>
-  - </servlet-mapping>
+    <mvc:resoures location="",mapping>
+     <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.pdf</url-pattern>
+   </servlet-mapping>
 >> - Побег JASON персонаж
 >>
    - <dependency>

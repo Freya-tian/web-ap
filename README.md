@@ -74,8 +74,8 @@
 >>
     Just IDEA run will be ok
 
->***Result***
->>
+***Result***
+
     ![image](https://github.com/Freya-tian/web-ap/blob/master/kmjp4-x2xdc.gif)
   
    

@@ -14,7 +14,7 @@
 	
 ##***Элементы страницы для достижения необходимой конфигурации***  
 
-> Vue:
+> **Vue:**
  >> - Применить веб-шаблон
  >>
      - npm i element-ui -S 
@@ -49,7 +49,7 @@
     - import VueRouter from 'vue-router'
     - Vue.use(VueRouter)
     
-> JAVA
+> **JAVA**
 >> - Доступ к статическим ресурсам
 >>
     <mvc:resoures location="",mapping>

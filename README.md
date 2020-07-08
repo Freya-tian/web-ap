@@ -64,6 +64,10 @@
        <artifactId>commons-lang3</artifactId>
        <version>3.0</version>
      </dependency>
+     
+##***КАК код работает***
+>
+npm run dev
   
    
  

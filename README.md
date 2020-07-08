@@ -67,7 +67,7 @@
      
 ##***КАК код работает***
 >>
-npm run dev
+    npm run dev
   
    
  

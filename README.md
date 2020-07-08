@@ -9,11 +9,13 @@
 ##***Процедура включает в себя***
    - Пользовательский ввод, конвертировать картинку
 	![makdown](1.jpg)
+   - login
+        ![markdowb](2.jpg)
+	
+##***Элементы страницы для достижения необходимой конфигурации***  
 
-   
-
-Vue:
- Применить веб-шаблон
+> Vue:
+ >> Применить веб-шаблон
     npm i element-ui -S 
     import ElementUI from 'element-ui';
     import 'element-ui/lib/theme-chalk/index.css';

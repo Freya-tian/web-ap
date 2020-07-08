@@ -74,8 +74,8 @@
 >>
     Just IDEA run will be ok
 
-***Result***
-    ![markdown](kmjp4-x2xdc.gif)
+***Result:***
+   >> ![markdown](kmjp4-x2xdc.gif)
   
    
  

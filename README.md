@@ -71,7 +71,7 @@
     npm run dev
 > **backend**
 >>
-  Just IDEA run will be ok
+    Just IDEA run will be ok
   
    
  

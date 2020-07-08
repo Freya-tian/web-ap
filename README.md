@@ -66,8 +66,12 @@
      </dependency>
      
 ##***КАК код работает***
+> **front**
 >>
     npm run dev
+> **backend**
+>>
+  Just IDEA run will be ok
   
    
  

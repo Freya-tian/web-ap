@@ -33,10 +33,9 @@
     
  >> - Экспорт PDF（Export pdf
  >>
-    - npm install --save html2canvas 
-    - npm install jspdf --save
+    - npm install --save html2canvas  
     - import html2Canvas from 'html2canvas'
-    - import JsPDF from 'jspdf'
+ 
     
  >> - Хранить информацию для входа（Store login information）
  >>

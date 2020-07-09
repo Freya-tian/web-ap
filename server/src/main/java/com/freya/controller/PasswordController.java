@@ -51,13 +51,14 @@ public class PasswordController {
         String password = user.getPassword();
         System.out.println(password);
         Timer timer = new Timer();// 实例化Timer类
-        timer.schedule(new TimerTask() {
-            public void run() {
-                map.clear();
-            }
-        }, 10000);// 这里百毫秒
-        for (String key : map.keySet()) {
+        
+         for (final String key : map.keySet()) {
             if ((map.get(key)).equals(password)) {
+                timer.schedule(new TimerTask() {
+                    public void run() {
+                        map.remove(key);
+                    }
+                }, 10000);// 这里百毫秒
                 return key;
             }
         }

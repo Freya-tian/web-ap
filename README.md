@@ -58,7 +58,7 @@
        <servlet-name>default</servlet-name>
        <url-pattern>*.pdf</url-pattern>
     </servlet-mapping>
->> - Побег JASON персонаж
+>> - получить информацию из форма JSON
 >>
     <dependency>
        <groupId>org.apache.commons</groupId>

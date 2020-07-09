@@ -31,7 +31,7 @@
     - import VueAxios from 'vue-axios'
     - Vue.use(VueAxios,axios)
     
- >> - Экспорт PDF（Export pdf
+ >> - Экспорт png（Export picture)
  >>
     - npm install --save html2canvas  
     - import html2Canvas from 'html2canvas'
